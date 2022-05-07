@@ -1,17 +1,21 @@
 <script lang="ts" setup name="framework-profile">
-  import classNames from 'classnames';
-  import { DownOutlined } from '@ant-design/icons-vue';
-  import { useFrameworkContext } from '../../hooks/useFrameworkContext';
+import classNames from 'classnames'
+import { DownOutlined } from '@ant-design/icons-vue'
+import { useFrameworkContext } from '../../hooks/useFrameworkContext'
 
-  const context = useFrameworkContext();
+const context = useFrameworkContext()
 
-  const baseClass = computed(() => classNames(`${context.prefix}-header-profile`));
+const baseClass = computed(() => classNames(`${context.prefix}-header-profile`))
 </script>
-
 <template>
   <a-popover trigger="click">
     <template #content>
-      <div>123</div>
+      <a-menu style="width: 256px" mode="vertical">
+        <a-menu-item key="1"> Profile </a-menu-item>
+        <a-menu-item key="2"> My Wallet </a-menu-item>
+        <a-menu-item key="3"> Lock Screen </a-menu-item>
+        <a-menu-item key="4"> Logout </a-menu-item>
+      </a-menu>
     </template>
     <div :class="baseClass">
       <a-avatar
@@ -26,28 +30,28 @@
 
 <style lang="less">
 
-  @import "../../../../../design/theme/theme-default";
-  @import "../../framework";
-  @component-class-name: ~'@{framework-namespace}-header-profile';
-  .@{component-class-name}{
-    height:@framework-header-search-height;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    padding:0 14px;
-    cursor: pointer;
-    &-avatar{
-        width:@framework-header-search-height/2;
-        height:@framework-header-search-height/2;
-    }
-    &-text{
-        margin-left: 8px;
-        font-size:14px;
-    }
-    &-icon{
-        margin-left: 5px;
-        font-size:8px;
-    }
+@import "../../../../../design/theme/theme-default";
+@import "../../framework";
+@component-class-name: ~'@{framework-namespace}-header-profile';
+.@{component-class-name}{
+  height:@framework-header-search-height;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding:0 14px;
+  cursor: pointer;
+  &-avatar{
+      width:@framework-header-search-height/2;
+      height:@framework-header-search-height/2;
   }
+  &-text{
+      margin-left: 8px;
+      font-size:14px;
+  }
+  &-icon{
+      margin-left: 5px;
+      font-size:8px;
+  }
+}
 </style>

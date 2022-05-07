@@ -1,0 +1,12 @@
+
+.vscode
+.idea
+.husky
+build
+dist
+node_modules
+public
+docs
+
+*.sh
+*.md
